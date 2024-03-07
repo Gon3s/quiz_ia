@@ -1,0 +1,41 @@
+include: package:lint/analysis_options.yaml
+
+analyzer:
+  exclude:
+    - build/**
+    - lib/generated/**
+    - lib/**.g.dart
+    - lib/**.freezed.dart
+  errors:
+    missing_return: warning
+    todo: warning
+    invalid_annotation_target: ignore
+
+linter:
+  rules:
+    prefer_single_quotes: true
+    avoid_function_literals_in_foreach_calls: false
+    avoid_positional_boolean_parameters: false
+    avoid_void_async: false
+    avoid_classes_with_only_static_members: false
+    require_trailing_commas: false
+    eol_at_end_of_file: false
+    tighten_type_of_initializing_formals: false
+    sort_pub_dependencies: false
+    always_specify_types: false
+    curly_braces_in_flow_control_structures: false
+    avoid_bool_literals_in_conditional_expressions: false
+    always_use_package_imports: false
+    avoid_dynamic_calls: false
+    depend_on_referenced_packages: false
+    avoid_setters_without_getters: false
+    avoid_redundant_argument_values: false
+    use_named_constants: false
+    unnecessary_getters_setters: false
+    unnecessary_const: false
+    use_setters_to_change_properties: false
+    avoid_final_parameters: false
+    no_leading_underscores_for_local_identifiers: false
+    use_colored_box: false
+    non_constant_identifier_names: false
+    prefer_relative_imports: true
