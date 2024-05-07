@@ -13,7 +13,7 @@ class _OpenAIApi implements OpenAIApi {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'https://api.openai.com/v1/';
+    baseUrl ??= 'https://api.groq.com/openai/v1/';
   }
 
   final Dio _dio;
@@ -86,7 +86,7 @@ class _OpenAIApi implements OpenAIApi {
 // RiverpodGenerator
 // **************************************************************************
 
-String _$openAIApiHash() => r'edac8ee919d88c04b27b840204011be9e3ec1828';
+String _$openAIApiHash() => r'37d7692a0dfacf7fdfb98de084331b128bfc6253';
 
 /// See also [openAIApi].
 @ProviderFor(openAIApi)

@@ -6,4 +6,6 @@ part 'env.g.dart';
 abstract class Env {
   @EnviedField(varName: 'OPEN_AI_API_KEY')
   static const String apiKey = _Env.apiKey;
+  @EnviedField(varName: 'GROQ_API_KEY')
+  static const String groqApiKey = _Env.groqApiKey;
 }

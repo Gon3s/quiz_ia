@@ -16,10 +16,12 @@ OpenAIApi openAIApi(OpenAIApiRef ref) {
       },
     ),
   );
+  dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
   return OpenAIApi(dio);
 }
 
-@RestApi(baseUrl: 'https://api.openai.com/v1/')
+// @RestApi(baseUrl: 'https://api.openai.com/v1/')
+@RestApi(baseUrl: 'https://api.groq.com/openai/v1/')
 abstract class OpenAIApi {
   factory OpenAIApi(Dio dio, {String baseUrl}) = _OpenAIApi;
 

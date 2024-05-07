@@ -43,10 +43,13 @@ class QuizRepositoryImpl implements QuizRepository {
   }
 
   dynamic _getChatCompletionRequest({required String level, required String theme}) async {
-    final response = await client.getChatCompletions(
-      'Bearer ${Env.apiKey}',
+    final response = await client
+        .getChatCompletions(
+      'Bearer ${Env.groqApiKey}',
       ChatCompletionRequest(
-        model: 'gpt-4-0125-preview',
+        // model: 'gpt-4-0125-preview',
+        // model: 'llama3-70b-8192',
+        model: 'mixtral-8x7b-32768',
         messages: [
           const MessageRequest(
             role: 'system',
@@ -126,7 +129,11 @@ Thème : $theme
           ),
         ],
       ),
-    );
+    )
+        .catchError((e, s) {
+      Print.red('quizz_repository', e);
+      Print.red('quizz_repository', s);
+    });
 
     Print.green('quizz_repository', response.choices.first.message.content);
 

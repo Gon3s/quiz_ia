@@ -11,7 +11,7 @@ _$ChatCompletionResponseImpl _$$ChatCompletionResponseImplFromJson(
     _$ChatCompletionResponseImpl(
       id: json['id'] as String,
       object: json['object'] as String,
-      created: json['created'] as int,
+      created: (json['created'] as num).toInt(),
       model: json['model'] as String,
       choices: (json['choices'] as List<dynamic>)
           .map((e) => ChoiceResponse.fromJson(e as Map<String, dynamic>))
@@ -30,7 +30,7 @@ Map<String, dynamic> _$$ChatCompletionResponseImplToJson(
 
 _$ChoiceResponseImpl _$$ChoiceResponseImplFromJson(Map<String, dynamic> json) =>
     _$ChoiceResponseImpl(
-      index: json['index'] as int,
+      index: (json['index'] as num).toInt(),
       message:
           MessageResponse.fromJson(json['message'] as Map<String, dynamic>),
       finish_reason: json['finish_reason'] as String,

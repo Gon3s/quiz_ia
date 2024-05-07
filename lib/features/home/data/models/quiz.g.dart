@@ -27,7 +27,7 @@ _$QuestionModelImpl _$$QuestionModelImplFromJson(Map<String, dynamic> json) =>
       question: json['question'] as String,
       answers:
           (json['answers'] as List<dynamic>).map((e) => e as String).toList(),
-      correctAnswer: json['correct_answer'] as int,
+      correctAnswer: (json['correct_answer'] as num).toInt(),
       explanation: json['explanation'] as String,
     );
 
